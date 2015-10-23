@@ -37,7 +37,9 @@ body>footer {
     background-color: #668b2e;
 }
 
-    
+.hide {
+    display: none;
+}
     
 img {
     max-width: 100%;
