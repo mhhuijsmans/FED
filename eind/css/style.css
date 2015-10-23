@@ -1,0 +1,1131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    display: -webkit-flex;
+    display: flex;
+    
+    /*shorthand property for the flex-direction and the flex-wrap properties*/     
+    -webkit-flex-flow: column wrap;   
+    flex-flow: column wrap;
+    overflow-x: hidden;
+    color: #1b1b1b;
+    background-color: #eee;
+    word-wrap: break-word;
+}
+
+body>header {
+    background-color: #ffcc00;
+}
+
+body>footer {
+    background-color: #ffcc00;
+}
+
+
+.hide {
+    display: none;
+}
+    
+img {
+    max-width: 100%;
+}
+
+video {
+    display: block;
+    max-width: 90%;
+    margin: 1em auto 0;
+}
+    
+a {
+    color: #000;
+}
+
+h1 {
+    background-color: #ffcc00;
+    text-align: center;
+}
+
+h2 {
+    background-color: #ffcc00;
+    text-align: center;
+}
+    
+body form {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+body form input[type="search"]{
+    border-radius: 0.5em;
+    box-shadow: 0.15em 0.15em 0.3em rgba(0,0,0,0.5) inset;
+    padding: 0.2em 1em 0.2em 0.4em;
+}
+    
+body form *[type="submit"] {
+    border-radius: 1em;
+    border: none;
+    box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+    
+body>header input[type="color"] {
+    width: 5em;
+    height: 3em;
+    display: inline-block;
+    margin: 0.5em;
+    float: right;
+}
+    
+body>header button[type="button"] {
+    border-radius: 1em;
+    border: none;
+    box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 0.5em 1em;
+    width: 5em;
+    display: inline-block;
+    margin: 1em;
+    margin-right: 0;
+    float: right;
+}
+
+body>header h1 {
+    clear: right;
+}
+
+body>header h1 + p {
+    font-style: italic;
+}
+
+body>header ul {
+    list-style: none;
+}
+        
+body>header img {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+main, aside, body>section {
+    background-color: #fff;
+}
+
+
+
+@media (max-width: 40em) {
+    
+    h1 {
+        font-size: 9vmin;
+        line-height: 75%;
+        padding: 0.5em 0;
+        margin: 1.5em 0 0;
+    }
+    
+    h2 {
+        font-size: 6vmin;
+        line-height: 75%;
+        padding: 0.7em 0;
+        margin: 1.5em 0 0;
+    }
+    
+    body form label {
+        margin-left: 0.5em;
+    }
+
+    body form input[type="search"]{
+        width: 40%;
+    }
+    
+    body form *[type="submit"] {
+        padding: 0.5em 1em;
+        width: 25%;
+    }
+    
+    
+    
+    body>header {
+        -webkit-order: 0;
+        order: 0;
+        width: 100%;
+        max-width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>header h1 {
+        margin-top: 0.5em;
+        padding: 0;
+        clear: both;
+    }
+    
+    body>footer h2 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
+    body>header p {
+        display: block;
+        text-align: center;
+        margin: 0.5em;
+    }
+    
+    body>header ul {
+        display: block;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    } 
+    
+    body>header ul li {
+        display: inline-block;
+        background-color: #fff;
+        margin: 0.2em 0;
+        padding: 0.5em ;
+    }
+    
+    body>header ul li a {
+        font-size: 4vw;
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body>header p a {
+        color: #000;
+        display: block;
+        text-align: right;
+        margin: 2.5em 0 0;
+        text-align: right;
+    }
+    
+        
+    main {
+        -webkit-order: 1;
+        order: 1;
+        width: 100%;
+        max-width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    main p, main h3, main h4 {
+        margin: 0.75em;
+    }
+    
+    main p:first-of-type {
+        margin-top: 2em
+    }
+    
+    main form>fieldset {
+        background-color: #ffcc00;
+        margin: 0.75em;
+        border: none;
+        border-radius: 0.5em;
+    }
+    
+    main form>fieldset>fieldset {
+        padding: 1em;
+        border: none;
+    }
+    
+    main form fieldset legend {
+        display: block;
+	    float: left;
+        width: 100%;
+        font-weight: bolder;
+    }
+    
+    main form fieldset label {
+        display: block;
+    }
+    
+    main form fieldset legend+label,main form fieldset legend+fieldset {
+        margin-top: 2em;
+    }
+    
+    main form fieldset>fieldset {
+        margin: 1em 0
+    }
+    
+    main form>fieldset:first-of-type label:not(:nth-of-type(5)) span:after {
+        content: " *";
+	    color: #000;
+    }
+    
+    main form em {
+        display: none;
+    }
+    
+    main form textarea, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+	    display: block;
+	    width: 100%;
+	    border-radius: 0.5em;
+	    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset, 0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+	    margin: .5em 0;
+	    padding: 0.2em 1em 0.2em 0.4em;
+	    transition: padding 0.5s;
+    }
+    
+    main form textarea {
+        height: 7em;
+    }
+    
+    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
+        padding: 0.5em 1em 0.5em 0.4em;
+    }
+    
+    main form input[type="submit"] {
+        display: block;
+        margin: 0 auto 1em;
+        border-radius: 1em;
+        border: 0.1em solid rgba(0,0,0,0.2);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
+        background-color: #fff;
+    }
+    
+    main form input[type="submit"]:hover {
+        border: 0.1em solid rgba(0,0,0,0.4);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.4);
+    }        
+        
+    
+        
+    aside {
+        -webkit-order: 2;
+        order: 2;
+        width: 100%;
+        max-width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    aside time[datetime] {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+    
+    aside>section:first-child time[datetime] {
+        display: block;
+    }
+    
+    aside a {
+        font-weight: bolder;
+        text-decoration: none;
+    }
+    
+    aside h2 a {
+        font-weight: bold;
+    }
+    
+    aside a[rel="author"] {
+        display: block;
+    }
+    
+    aside article {
+        display: block;
+        width: 100%;
+        padding: 1em;
+        margin: auto;
+    }
+    
+    
+    
+    
+    body>section {
+        -webkit-order: 3;
+        order: 3;
+        width: 100%;
+        max-width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>section>article {
+        display: block;
+        width: 100%;
+        padding: 1em;
+    }
+    
+    body>section a {
+        font-weight: bolder;
+    }
+    
+    body>footer {
+        -webkit-order: 4;
+        order: 4;
+        max-width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>footer section h2+form {
+        display: block;
+        margin: 2em 0 0;
+    }
+    
+    body>footer section  {
+        margin: 1.5em;
+    }
+    
+    body>footer input[type="search"] {
+        width: 50%;
+    }
+    
+    body>footer input[type="submit"] {
+        width: 35%;
+    }
+    
+    body>footer>p:last-of-type a {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (min-width: 23em) and (max-width: 40em) {
+    
+    h1 {
+        font-size: 2em;
+        line-height: 75%;
+        padding: 0.5em 0;
+        margin: 1.5em 0 0;
+    }
+    
+    h2 {
+        font-size: 1em;
+        line-height: 75%;
+        padding: 0.7em 0;
+        margin: 1.5em 0 0;
+    }
+}
+
+
+@media (min-width: 40em) and (max-width: 75em) {
+    
+    h1 {
+        font-size: 2em;
+        line-height: 75%;
+        padding: 0.5em 0;
+        margin: 1em 0 0;
+    }
+    
+    h2 {
+        font-size: 1em;
+        line-height: 75%;
+        padding: 0.7em 0;
+        margin: 1em 0 0;
+    }
+
+    body form input[type="search"]{
+        width: 50%;
+    }
+    
+    body form *[type="submit"] {
+        padding: 0.5em 1em;
+        width: 15%;
+    }        
+    
+    body>header {
+        -webkit-order: 0;
+        order: 0;
+        width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>header h1 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
+    body>footer h2 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
+    body>header p {
+        display: block;
+        text-align: center;
+        margin: 2em 1em 1em;
+        font-size: 0.8em;
+    }
+    
+    body>header nav {
+        width: 100%;
+    }
+    
+    body>header ul {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/   
+        -webkit-flex-flow: row nowrap;     
+        flex-flow: row nowrap;
+        padding: 0;
+    }
+    
+    body>header ul li {
+        -webkit-order: 1;
+        order: 1;
+        flex-grow: 1;
+        text-align: center;
+        line-height: 3em;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-right-style: none;
+        border-left-style: none;
+    }
+    
+    body>header ul li:hover {
+        background-color: rgba(0,0,0,0.1);
+        border: none;
+    }
+    
+    body>header ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body>header p a {
+        color: #000;
+        display: block;
+        text-align: right;
+        margin: 2.5em 0 0;
+        text-align: right;
+    }
+    
+    main {
+        -webkit-order: 1;
+        order: 1;
+        width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    main h3, main h4 {
+        margin: 2.75em 1.5em 0;
+        display: block;
+    }
+    
+    main p {
+        margin: 0 1.5em;
+    }
+    
+    main p:first-of-type {
+        margin-top: 2em;
+    }
+    
+    main form>fieldset {
+        background-color: #ffcc00;
+        margin: 0.75em auto;
+        padding: 1em;
+        width: 75%;
+        box-shadow: 0.3em 0.3em 0.2em rgba(0,0,0,0.5);
+        border-radius: 0.5em;
+        border: none;
+    }
+    
+    main form>fieldset>fieldset {
+        padding: 1em;
+        border: none;
+    }
+        
+    
+    main form fieldset legend {
+        display: block;
+	    float: left;
+        width: 100%;
+        font-weight: bolder;
+    }
+    
+    main form fieldset label {
+        display: block;
+    }
+    
+    main form fieldset legend+label,main form fieldset legend+fieldset {
+        margin-top: 2em;
+    }
+    
+    main form fieldset>fieldset {
+        margin: 1em 0
+    }
+    
+    main form>fieldset:first-of-type label:not(:nth-of-type(5)) span:after {
+        content: " *";
+	    color: #000;
+    }
+    
+    main form em {
+        display: none;
+    }
+    
+    main form textarea, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+	    display: block;
+	    width: 100%;
+	    border-radius: 0.5em;
+	    box-shadow: 0.3em 0.3em 0.3em rgba(0,0,0,0.5) inset;
+	    border: none;
+	    margin: .5em 0;
+	    padding: 0.2em 1em 0.2em 0.4em;
+	    transition: padding 0.5s;
+    }
+    
+    main form textarea {
+        height: 7em;
+    }
+    
+    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
+        padding: 0.5em 1em 0.5em 0.4em;
+    }
+    
+    main form input[type="submit"] {
+        display: block;
+        width: 7.5em;
+        margin: 0 auto 1em;
+        border-radius: 1em;
+        border: 0.1em solid rgba(0,0,0,0.2);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
+        background-color: #fff;
+    }
+    
+    main form input[type="submit"]:hover {
+        border: 0.1em solid rgba(0,0,0,0.4);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.4);
+    }  
+    
+    
+    
+    aside {
+        -webkit-order: 2;
+        order: 2;
+        width: 35em;
+        display: block;
+        margin: auto;
+        display: flex;
+        display: -webkit-flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/        
+        flex-flow: row nowrap;
+        -webkit-flex-flow: row nowrap;
+        align-items: stretch;
+    }
+    
+    aside>section:first-child h2 {
+        height: 3em;
+        line-height: 150%;
+    }
+    
+    aside>section:last-child h2 {
+        line-height: 150%;
+        height: 3em;
+    }
+    
+    aside a {
+        font-weight: bolder;
+        text-decoration: none;
+    }
+    
+    aside h2 a {
+        font-weight: bold;
+    }
+    
+    aside a[rel="author"] {
+        display: block;
+    }
+    
+    aside time[datetime] {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+    
+    aside>section:first-child time[datetime] {
+        display: block;
+    }
+    
+    aside p>a:hover {
+        border-left: 0.2em solid #1b1b1b;
+        padding-left: 0.4em;
+    }
+    
+    aside article {
+        display: block;
+        padding: 1em;
+        margin: auto;
+    }
+    
+    body>section {
+        -webkit-order: 3;
+        order: 3;
+        width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>section h2 {
+        margin-bottom: 1em;
+    }
+    
+    body>section>article {
+        display: block;
+        width: 100%;
+        margin: 1em auto;
+    }
+    
+    body>section a {
+        text-decoration: none;
+        font-weight: bolder;
+    }
+    
+    body>section a:hover {
+        border-left: 0.2em solid #1b1b1b;
+        padding-left: 0.4em;
+    }
+    
+    body>section header, body>section article>p {
+        margin: 0 1.5em;
+    }
+    
+    body>footer {
+        -webkit-order: 4;
+        order: 4;
+        width: 35em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>footer h2 {
+        font-size: 1em;
+        font-family: sans-serif;
+        transform:rotate(0deg);
+        text-shadow: none;
+        margin: auto;
+        text-align: inherit;
+        line-height: 200%;
+    }
+    
+    body>footer>section {
+        font-size: 0.8em;
+        width: 100%;
+        display: block;
+        margin: 1.5em auto;
+    }
+    
+    body>footer>section>ul {
+        display: flex;
+        display: -webkit-flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/        
+        flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li {
+        display: block;
+        width: 25%;
+        margin: 0.5em auto;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li>ul {
+        display: block;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li>ul>li {
+        display: block;
+        padding: 0;
+    }
+    
+    body>footer form {
+        width: 100%;
+    }
+    
+    body>footer section>* {
+        margin: 0 1.5em;
+    }
+    
+    body>footer section h2+form {
+        display: block;
+        margin: 2em 0 0;
+    }
+    
+    body>footer>p:last-of-type a {
+        display: block;
+        text-align: center;
+    }
+
+}
+
+
+
+
+@media (min-width: 75em) {
+    
+    body {
+        -webkit-flex-flow: row wrap;   
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    
+    h1 {
+        font-size: 3.5em;
+        line-height: 75%;
+        padding: 0.5em 0;
+        margin: 1em 0 0;
+    }
+    
+    h2 {
+        font-size: 2em;
+        line-height: 75%;
+        padding: 0.7em 0;
+        margin: 1em 0 0;
+    }
+
+    body form input[type="search"]{
+        width: 50%;
+    }
+    
+    body form *[type="submit"] {
+        padding: 0.5em 1em;
+        width: 15%;
+    }        
+    
+    body>header {
+        -webkit-order: 0;
+        order: 0;
+        width: 70em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>header h1 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
+    body>footer h2 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
+    body>header p {
+        display: block;
+        text-align: center;
+        margin: 2em 1em 1em;
+    }
+    
+    body>header nav {
+        width: 100%;
+    }
+    
+    body>header ul {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/   
+        -webkit-flex-flow: row nowrap;     
+        flex-flow: row nowrap;
+        padding: 0;
+    }
+    
+    body>header ul li {
+        -webkit-order: 1;
+        order: 1;
+        flex-grow: 1;
+        text-align: center;
+        line-height: 3em;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-right-style: none;
+        border-left-style: none;
+    }
+    
+    body>header ul li:hover {
+        background-color: rgba(0,0,0,0.1);
+        border: none;
+    }
+    
+    body>header ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    body>header p a {
+        color: #000;
+        display: block;
+        text-align: right;
+        margin: 2.5em 0 0;
+        text-align: right;
+    }
+    
+    main {
+        -webkit-order: 2;
+        order: 2;
+        width: 35em;
+        display: inline-block;
+    }
+    
+    main h1:first-child {
+        margin-top: 0.7em;
+    }
+    
+    main h3, main h4 {
+        margin: 2.75em 1.5em 0;
+        display: block;
+    }
+    
+    main p {
+        margin: 0 1.5em;
+    }
+    
+    main p:first-of-type {
+        margin-top: 2em;
+    }
+    
+    main form>fieldset {
+        background-color: #ffcc00;
+        margin: 0.75em auto;
+        padding: 1em;
+        width: 75%;
+        box-shadow: 0.3em 0.3em 0.2em rgba(0,0,0,0.5);
+        border-radius: 0.5em;
+        border: none;
+    }
+    
+    main form>fieldset>fieldset {
+        padding: 1em;
+        border: none;
+    }
+        
+    
+    main form fieldset legend {
+        display: block;
+	    float: left;
+        width: 100%;
+        font-weight: bolder;
+    }
+    
+    main form fieldset label {
+        display: block;
+    }
+    
+    main form fieldset legend+label,main form fieldset legend+fieldset {
+        margin-top: 2em;
+    }
+    
+    main form fieldset>fieldset {
+        margin: 1em 0
+    }
+    
+    main form>fieldset:first-of-type label:not(:nth-of-type(5)) span:after {
+        content: " *";
+	    color: #000;
+    }
+    
+    main form em {
+        display: none;
+    }
+    
+    main form textarea, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+	    display: block;
+	    width: 100%;
+	    border-radius: 0.5em;
+	    box-shadow: 0.3em 0.3em 0.3em rgba(0,0,0,0.5) inset;
+	    border: none;
+	    margin: .5em 0;
+	    padding: 0.2em 1em 0.2em 0.4em;
+	    transition: padding 0.5s;
+    }
+    
+    main form textarea {
+        height: 7em;
+    }
+    
+    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
+        padding: 0.5em 1em 0.5em 0.4em;
+    }
+    
+    main form input[type="submit"] {
+        display: block;
+        width: 7.5em;
+        margin: 0 auto 1em;
+        border-radius: 1em;
+        border: 0.1em solid rgba(0,0,0,0.2);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
+        background-color: #fff;
+    }
+    
+    main form input[type="submit"]:hover {
+        border: 0.1em solid rgba(0,0,0,0.4);
+        box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.4);
+    }  
+    
+    
+    
+    aside {
+        -webkit-order: 1;
+        order: 1;
+        width: 17.5em;
+        display: inline-block;
+    }
+    
+    aside section:first-child h2 {
+        margin-top: 1.21em;
+        height: 3.08em;
+    }
+    
+    aside a {
+        font-weight: bolder;
+        text-decoration: none;
+    }
+    
+    aside h2 a {
+        font-weight: bold;
+    }
+    
+    aside a[rel="author"] {
+        display: block;
+    }
+    
+    aside time[datetime] {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+    
+    aside>section:first-child time[datetime] {
+        display: block;
+    }
+    
+    aside p>a:hover {
+        border-left: 0.2em solid #1b1b1b;
+        padding-left: 0.4em;
+    }
+    
+    aside article {
+        display: block;
+        width: 85%;
+        padding: 1em;
+        margin: auto;
+    }
+    
+    body>section {
+        -webkit-order: 3;
+        order: 3;
+        width: 17.5em;
+        display: inline-block;
+    }
+    
+    body>section h2:first-child {
+        margin-top: 1.21em;
+        height: 3.08em;
+        line-height: 70%;
+    }
+    
+    body>section h2 {
+        margin-bottom: 1em;
+    }
+    
+    body>section>article {
+        display: block;
+        width: 100%;
+        margin: 1em auto;
+    }
+    
+    body>section a {
+        text-decoration: none;
+        font-weight: bolder;
+    }
+    
+    body>section a:hover {
+        border-left: 0.2em solid #1b1b1b;
+        padding-left: 0.4em;
+    }
+    
+    body>section header, body>section article>p {
+        margin: 0 1.5em;
+    }
+    
+    body>footer {
+        -webkit-order: 4;
+        order: 4;
+        width: 70em;
+        display: block;
+        margin: auto;
+    }
+    
+    body>footer h2 {
+        font-size: 1em;
+        font-family: sans-serif;
+        transform:rotate(0deg);
+        text-shadow: none;
+        margin: auto;
+        text-align: inherit;
+        line-height: 200%;
+    }
+    
+    body>footer>section {
+        font-size: 0.8em;
+        width: 100%;
+        display: block;
+        margin: 1.5em auto;
+    }
+    
+    body>footer>section>ul {
+        display: flex;
+        display: -webkit-flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/        
+        flex-flow: row wrap;
+        -webkit-flex-flow: row wrap;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li {
+        display: block;
+        width: 25%;
+        margin: 0.5em auto;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li>ul {
+        display: block;
+        padding: 0;
+    }
+    
+    body>footer>section>ul>li>ul>li {
+        display: block;
+        padding: 0;
+    }
+    
+    body>footer form {
+        text-align: left;
+        padding: 1.5em;
+        width: 60%;
+    }
+    
+    body>footer section>* {
+        margin: 0 1.5em;
+    }
+    
+    body>footer section:nth-last-of-type(2) {
+        display: block;
+        margin: 0;
+        width: 60%;
+    }
+    
+    body>footer section h2+form {
+        display: block;
+        margin: 2em 0 0;
+    }
+    
+    body>footer>p:last-of-type a {
+        display: block;
+        text-align: center;
+    }
+
+}
