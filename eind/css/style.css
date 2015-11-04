@@ -448,6 +448,7 @@ main, aside, body>section {
         -webkit-order: 0;
         order: 0;
         width: 100%;
+        margin: auto;
         max-width: 45em;
         display: -webkit-flex;
         display: flex;
