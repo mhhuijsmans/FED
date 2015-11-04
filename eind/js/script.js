@@ -1,5 +1,6 @@
 /*jslint browser: true, devel: true, eqeq: true, plusplus: true, sloppy: true, vars: true, white: true*/
 
+//color change
 var changeColor = document.getElementById('colorchange');
 var picker = document.getElementById('favcolor');
 
@@ -28,6 +29,30 @@ changeColor.addEventListener('click', function () {
 });
 
 
+//menu toggle
+var menuImg = document.getElementById('menuimg');
+var hideTheseElements = document.querySelectorAll('body>header>*:not(img):not(div)');
+var profileA = document.querySelector('body>header p>a');
+
+(function () {
+    var i = 0;
+    for (i = 0; i < hideTheseElements.length; i++) {
+        hideTheseElements[i].classList.add('menuhide');
+    }
+})();
+
+profileA.classList.add('menuhide');
+
+menuImg.addEventListener('click', function () {
+    var i = 0;    
+    for (i = 0; i < hideTheseElements.length; i++) {
+        hideTheseElements[i].classList.toggle('menuhide');
+    }
+    profileA.classList.toggle('menuhide');
+});
+    
+
+//form toggle
 var project = document.getElementById('project');
 var stage = document.getElementById('stage');
 var radioProject = document.getElementsByName('submit-for')[0];
@@ -40,7 +65,6 @@ radioProject.addEventListener('change', function () {
     project.classList.remove('hide');
     stage.classList.add('hide');
 });
-
 radioStage.addEventListener('change', function () {
     project.classList.add('hide');
     stage.classList.remove('hide');

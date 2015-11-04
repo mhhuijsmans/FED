@@ -53,17 +53,12 @@ h2 {
     background-color: #ffcc00;
     text-align: center;
 }
-    
-body form {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
 
 body form input[type="search"]{
     border-radius: 0.5em;
-    box-shadow: 0.15em 0.15em 0.3em rgba(0,0,0,0.5) inset;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset;
     padding: 0.2em 1em 0.2em 0.4em;
+    border: none;
 }
     
 body form *[type="submit"] {
@@ -74,7 +69,7 @@ body form *[type="submit"] {
 }
     
 body>header input[type="color"] {
-    width: 5em;
+    width: 3em;
     height: 3em;
     display: inline-block;
     margin: 0.5em;
@@ -87,7 +82,6 @@ body>header button[type="button"] {
     box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
     background-color: #fff;
     padding: 0.5em 1em;
-    width: 5em;
     display: inline-block;
     margin: 1em;
     margin-right: 0;
@@ -105,12 +99,6 @@ body>header h1 + p {
 body>header ul {
     list-style: none;
 }
-        
-body>header img {
-    width: 80%;
-    display: block;
-    margin: auto;
-}
 
 main, aside, body>section {
     background-color: #fff;
@@ -124,14 +112,21 @@ main, aside, body>section {
         font-size: 9vmin;
         line-height: 75%;
         padding: 0.5em 0;
-        margin: 1.5em 0 0;
+        margin: 1em 0 0;
     }
     
     h2 {
         font-size: 6vmin;
         line-height: 75%;
         padding: 0.7em 0;
-        margin: 1.5em 0 0;
+        margin: 1em 0 0;
+    }
+    
+    body form {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8em;
     }
     
     body form label {
@@ -144,7 +139,6 @@ main, aside, body>section {
     
     body form *[type="submit"] {
         padding: 0.5em 1em;
-        width: 25%;
     }
     
     
@@ -153,33 +147,44 @@ main, aside, body>section {
         -webkit-order: 0;
         order: 0;
         width: 100%;
-        max-width: 35em;
-        display: block;
-        margin: auto;
+        max-width: 40em;
+        display: -webkit-flex;
+        display: flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/     
+        -webkit-flex-flow: row wrap;   
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
     }
     
-    body>header h1 {
-        margin-top: 0.5em;
-        padding: 0;
-        clear: both;
+    body>header h1, body> header h1+p {
+        display: none;
     }
     
-    body>footer h2 {
-        margin-top: 0.5em;
-        padding: 0;
+    body>header img:first-of-type {
+        width: 72%;
+        max-width: 15em;
+        margin: 0.75em 1em;
     }
     
-    body>header p {
-        display: block;
-        text-align: center;
-        margin: 0.5em;
+    body>header img:nth-of-type(2) {
+        width: 3.5em;
+        height: auto;
+    }
+    
+    body>header>div {
+        display: none;
     }
     
     body>header ul {
+        -webkit-order: 2;
+        order: 2;
         display: block;
         width: 100%;
         padding: 0;
         text-align: center;
+        margin-top: 0;
     } 
     
     body>header ul li {
@@ -195,12 +200,19 @@ main, aside, body>section {
         color: #000;
     }
     
+    .menuhide {
+        display: none;
+    }
+    
+    body>header p:last-of-type {
+        margin: 0.5em;
+        font-size: 0.8em;
+        width: 100%;
+    }
+    
     body>header p a {
         color: #000;
-        display: block;
-        text-align: right;
-        margin: 2.5em 0 0;
-        text-align: right;
+        float: right;
     }
     
         
@@ -208,7 +220,7 @@ main, aside, body>section {
         -webkit-order: 1;
         order: 1;
         width: 100%;
-        max-width: 35em;
+        max-width: 40em;
         display: block;
         margin: auto;
     }
@@ -221,11 +233,17 @@ main, aside, body>section {
         margin-top: 2em
     }
     
+    main form {
+        background-color: #ffcc00;
+        width: 100%;
+        padding-bottom: 1em;
+        font-size: 1em;
+    }
+    
     main form>fieldset {
         background-color: #ffcc00;
-        margin: 0.75em;
         border: none;
-        border-radius: 0.5em;
+        text-align: left;
     }
     
     main form>fieldset>fieldset {
@@ -264,24 +282,24 @@ main, aside, body>section {
     main form textarea, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
 	    display: block;
 	    width: 100%;
+        border: none;
 	    border-radius: 0.5em;
-	    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset, 0.2em 0.2em 0.2em rgba(0,0,0,0.3);
+	    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset;
 	    margin: .5em 0;
 	    padding: 0.2em 1em 0.2em 0.4em;
-	    transition: padding 0.5s;
+    }
+    
+    main form textarea, main form input:focus {
+        outline: none;
     }
     
     main form textarea {
         height: 7em;
     }
     
-    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
-        padding: 0.5em 1em 0.5em 0.4em;
-    }
-    
     main form input[type="submit"] {
         display: block;
-        margin: 0 auto 1em;
+        margin: 1em auto 1em;
         border-radius: 1em;
         border: 0.1em solid rgba(0,0,0,0.2);
         box-shadow: 0.2em 0.2em 0.1em rgba(0,0,0,0.2);
@@ -299,7 +317,7 @@ main, aside, body>section {
         -webkit-order: 2;
         order: 2;
         width: 100%;
-        max-width: 35em;
+        max-width: 40em;
         display: block;
         margin: auto;
     }
@@ -340,7 +358,7 @@ main, aside, body>section {
         -webkit-order: 3;
         order: 3;
         width: 100%;
-        max-width: 35em;
+        max-width: 40em;
         display: block;
         margin: auto;
     }
@@ -358,14 +376,20 @@ main, aside, body>section {
     body>footer {
         -webkit-order: 4;
         order: 4;
-        max-width: 35em;
+        max-width: 40em;
         display: block;
         margin: auto;
     }
     
+    body>footer h2 {
+        margin-top: 0.5em;
+        padding: 0;
+    }
+    
     body>footer section h2+form {
-        display: block;
-        margin: 2em 0 0;
+        display: inline-block;
+        margin: 1.5em 0 0;
+        text-align: left;
     }
     
     body>footer section  {
@@ -374,10 +398,6 @@ main, aside, body>section {
     
     body>footer input[type="search"] {
         width: 50%;
-    }
-    
-    body>footer input[type="submit"] {
-        width: 35%;
     }
     
     body>footer>p:last-of-type a {
@@ -392,19 +412,19 @@ main, aside, body>section {
         font-size: 2em;
         line-height: 75%;
         padding: 0.5em 0;
-        margin: 1.5em 0 0;
+        margin: 1em 0 0;
     }
     
     h2 {
         font-size: 1em;
         line-height: 75%;
         padding: 0.7em 0;
-        margin: 1.5em 0 0;
+        margin: 1em 0 0;
     }
 }
 
 
-@media (min-width: 40em) and (max-width: 75em) {
+@media (min-width: 40em) and (max-width: 60em) {
     
     h1 {
         font-size: 2em;
@@ -419,39 +439,43 @@ main, aside, body>section {
         padding: 0.7em 0;
         margin: 1em 0 0;
     }
-
-    body form input[type="search"]{
-        width: 50%;
-    }
     
     body form *[type="submit"] {
         padding: 0.5em 1em;
-        width: 15%;
     }        
     
     body>header {
         -webkit-order: 0;
         order: 0;
-        width: 35em;
-        display: block;
-        margin: auto;
+        width: 100%;
+        max-width: 45em;
+        display: -webkit-flex;
+        display: flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/     
+        -webkit-flex-flow: row wrap;   
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
     }
     
-    body>header h1 {
-        margin-top: 0.5em;
-        padding: 0;
+    body>header h1, body> header h1+p {
+        display: none;
     }
     
-    body>footer h2 {
-        margin-top: 0.5em;
-        padding: 0;
+    body>header img:first-of-type {
+        width: 72%;
+        max-width: 15em;
+        margin: 0.75em 1em;
     }
     
-    body>header p {
-        display: block;
-        text-align: center;
-        margin: 2em 1em 1em;
-        font-size: 0.8em;
+    body>header img:nth-of-type(2) {
+        width: 3.5em;
+        height: auto;
+    }
+    
+    body>header>div {
+        display: none;
     }
     
     body>header nav {
@@ -464,9 +488,10 @@ main, aside, body>section {
         display: flex;
     
         /*shorthand property for the flex-direction and the flex-wrap properties*/   
-        -webkit-flex-flow: row nowrap;     
-        flex-flow: row nowrap;
+        -webkit-flex-flow: row wrap;     
+        flex-flow: row wrap;
         padding: 0;
+        margin: 0;
     }
     
     body>header ul li {
@@ -490,18 +515,30 @@ main, aside, body>section {
         color: #000;
     }
     
+    body>header form {
+        display: inline-block;
+        margin: 0.5em;
+        font-size: 0.8em;   
+    }
+    
+    body>header>p:last-of-type {
+        margin: 0.5em;
+        font-size: 0.8em;        
+    }
+    
     body>header p a {
         color: #000;
-        display: block;
-        text-align: right;
-        margin: 2.5em 0 0;
-        text-align: right;
+    }
+    
+    .menuhide {
+        display: none;
     }
     
     main {
         -webkit-order: 1;
         order: 1;
-        width: 35em;
+        width: 100%;
+        max-width: 45em;
         display: block;
         margin: auto;
     }
@@ -519,13 +556,16 @@ main, aside, body>section {
         margin-top: 2em;
     }
     
+    main form {
+        background-color: #ffcc00;
+        width: 100%;
+        padding-bottom: 1em;
+        margin-top: 1em;
+    }
+    
     main form>fieldset {
         background-color: #ffcc00;
-        margin: 0.75em auto;
-        padding: 1em;
-        width: 75%;
-        box-shadow: 0.3em 0.3em 0.2em rgba(0,0,0,0.5);
-        border-radius: 0.5em;
+        width: 100%;
         border: none;
     }
     
@@ -551,7 +591,7 @@ main, aside, body>section {
     }
     
     main form fieldset>fieldset {
-        margin: 1em 0
+        margin: 1em 0;
     }
     
     main form>fieldset:first-of-type label:not(:nth-of-type(5)) span:after {
@@ -567,19 +607,18 @@ main, aside, body>section {
 	    display: block;
 	    width: 100%;
 	    border-radius: 0.5em;
-	    box-shadow: 0.3em 0.3em 0.3em rgba(0,0,0,0.5) inset;
+	    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset;
 	    border: none;
 	    margin: .5em 0;
 	    padding: 0.2em 1em 0.2em 0.4em;
-	    transition: padding 0.5s;
+    }
+    
+    main form textarea, main form input:focus {
+        outline: none;
     }
     
     main form textarea {
         height: 7em;
-    }
-    
-    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
-        padding: 0.5em 1em 0.5em 0.4em;
     }
     
     main form input[type="submit"] {
@@ -602,7 +641,8 @@ main, aside, body>section {
     aside {
         -webkit-order: 2;
         order: 2;
-        width: 35em;
+        width: 100%;
+        max-width: 45em;
         display: block;
         margin: auto;
         display: flex;
@@ -660,7 +700,8 @@ main, aside, body>section {
     body>section {
         -webkit-order: 3;
         order: 3;
-        width: 35em;
+        width: 100%;
+        max-width: 45em;
         display: block;
         margin: auto;
     }
@@ -692,19 +733,18 @@ main, aside, body>section {
     body>footer {
         -webkit-order: 4;
         order: 4;
-        width: 35em;
+        width: 100%;
+        max-width: 45em;
         display: block;
         margin: auto;
     }
     
     body>footer h2 {
-        font-size: 1em;
-        font-family: sans-serif;
-        transform:rotate(0deg);
-        text-shadow: none;
         margin: auto;
-        text-align: inherit;
+        margin-top: 0.5em;
+        padding: 0;
         line-height: 200%;
+        text-align: left;
     }
     
     body>footer>section {
@@ -741,17 +781,18 @@ main, aside, body>section {
         padding: 0;
     }
     
-    body>footer form {
-        width: 100%;
-    }
-    
     body>footer section>* {
         margin: 0 1.5em;
     }
     
     body>footer section h2+form {
-        display: block;
-        margin: 2em 0 0;
+        display: inline-block;
+        margin: 1em 1.5em 0;
+        width: 100%;
+    }
+    
+    body>footer input[type="search"] {
+        width: 50%;
     }
     
     body>footer>p:last-of-type a {
@@ -764,7 +805,7 @@ main, aside, body>section {
 
 
 
-@media (min-width: 75em) {
+@media (min-width: 60em) {
     
     body {
         -webkit-flex-flow: row wrap;   
@@ -773,7 +814,7 @@ main, aside, body>section {
     }
     
     h1 {
-        font-size: 3.5em;
+        font-size: 2.5em;
         line-height: 75%;
         padding: 0.5em 0;
         margin: 1em 0 0;
@@ -798,25 +839,29 @@ main, aside, body>section {
     body>header {
         -webkit-order: 0;
         order: 0;
-        width: 70em;
-        display: block;
-        margin: auto;
+        width: 100%;
+        max-width: 75em;
+        display: -webkit-flex;
+        display: flex;
+    
+        /*shorthand property for the flex-direction and the flex-wrap properties*/     
+        -webkit-flex-flow: row wrap;   
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
     }
     
-    body>header h1 {
-        margin-top: 0.5em;
-        padding: 0;
+    body>header h1, body> header h1+p {
+        display: none;
     }
     
-    body>footer h2 {
-        margin-top: 0.5em;
-        padding: 0;
+    body>header img:first-of-type {
+        width: 15em;
+        margin: 0.75em;
     }
     
-    body>header p {
-        display: block;
-        text-align: center;
-        margin: 2em 1em 1em;
+    body>header img:nth-of-type(2) {
+        display: none;
     }
     
     body>header nav {
@@ -831,6 +876,7 @@ main, aside, body>section {
         /*shorthand property for the flex-direction and the flex-wrap properties*/   
         -webkit-flex-flow: row nowrap;     
         flex-flow: row nowrap;
+        margin: 0;
         padding: 0;
     }
     
@@ -855,23 +901,33 @@ main, aside, body>section {
         color: #000;
     }
     
+    body>header form {
+        display: inline;
+        width: 55em;
+        margin: 0.5em;
+        font-size: 0.8em;   
+    }
+    
+    body>header>p:last-of-type {
+        margin: 0.5em;
+        font-size: 0.8em;        
+    }
+    
     body>header p a {
         color: #000;
-        display: block;
-        text-align: right;
-        margin: 2.5em 0 0;
-        text-align: right;
     }
     
     main {
         -webkit-order: 2;
         order: 2;
-        width: 35em;
+        width: 50%;
+        max-width: 37.5em;
         display: inline-block;
     }
     
     main h1:first-child {
-        margin-top: 0.7em;
+        margin-top: 0.97em;
+        line-height: 145%;
     }
     
     main h3, main h4 {
@@ -887,13 +943,21 @@ main, aside, body>section {
         margin-top: 2em;
     }
     
+    main form {
+        background-color: #ffcc00;
+        display: block;
+        margin: auto;
+        width: 90%;
+        padding-bottom: 1em;
+        margin-top: 1em;
+    }
+    
     main form>fieldset {
         background-color: #ffcc00;
         margin: 0.75em auto;
         padding: 1em;
-        width: 75%;
-        box-shadow: 0.3em 0.3em 0.2em rgba(0,0,0,0.5);
-        border-radius: 0.5em;
+        text-align: left;
+        width: 100%;
         border: none;
     }
     
@@ -935,19 +999,18 @@ main, aside, body>section {
 	    display: block;
 	    width: 100%;
 	    border-radius: 0.5em;
-	    box-shadow: 0.3em 0.3em 0.3em rgba(0,0,0,0.5) inset;
+	    box-shadow: 0.2em 0.2em 0.2em rgba(0,0,0,0.3) inset;
 	    border: none;
 	    margin: .5em 0;
 	    padding: 0.2em 1em 0.2em 0.4em;
-	    transition: padding 0.5s;
+    }
+    
+    main form textarea, main form input:focus {
+        outline: none;
     }
     
     main form textarea {
         height: 7em;
-    }
-    
-    main form textarea:hover, main form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):hover {
-        padding: 0.5em 1em 0.5em 0.4em;
     }
     
     main form input[type="submit"] {
@@ -970,7 +1033,8 @@ main, aside, body>section {
     aside {
         -webkit-order: 1;
         order: 1;
-        width: 17.5em;
+        width: 25%;
+        max-width: 18.75em;
         display: inline-block;
     }
     
@@ -1016,14 +1080,15 @@ main, aside, body>section {
     body>section {
         -webkit-order: 3;
         order: 3;
-        width: 17.5em;
+        width: 25%;
+        max-width: 18.75em;
         display: inline-block;
     }
     
     body>section h2:first-child {
         margin-top: 1.21em;
         height: 3.08em;
-        line-height: 70%;
+        line-height: 75%;
     }
     
     body>section h2 {
@@ -1053,19 +1118,19 @@ main, aside, body>section {
     body>footer {
         -webkit-order: 4;
         order: 4;
-        width: 70em;
+        width: 100%;
+        max-width: 75em;
         display: block;
         margin: auto;
     }
     
     body>footer h2 {
-        font-size: 1em;
-        font-family: sans-serif;
-        transform:rotate(0deg);
-        text-shadow: none;
         margin: auto;
-        text-align: inherit;
+        margin-top: 0.5em;
+        padding: 0;
         line-height: 200%;
+        text-align: left;
+        font-size: 1em;
     }
     
     body>footer>section {
@@ -1104,8 +1169,9 @@ main, aside, body>section {
     
     body>footer form {
         text-align: left;
-        padding: 1.5em;
         width: 60%;
+        display: block;
+        margin: 1em 0 0;
     }
     
     body>footer section>* {
@@ -1116,11 +1182,6 @@ main, aside, body>section {
         display: block;
         margin: 0;
         width: 60%;
-    }
-    
-    body>footer section h2+form {
-        display: block;
-        margin: 2em 0 0;
     }
     
     body>footer>p:last-of-type a {
