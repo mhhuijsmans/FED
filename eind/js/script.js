@@ -11,6 +11,7 @@ changeColor.addEventListener('click', function () {
     var h1All = document.querySelectorAll('h1').length;
     var h2All = document.querySelectorAll('h2').length;
     var fieldsetAll = document.querySelectorAll('fieldset').length;
+    var formAll = document.querySelector('main>form');
     var i = 0;
     var j = 0;
     var k = 0;
@@ -26,6 +27,9 @@ changeColor.addEventListener('click', function () {
     for (k = 0; k < fieldsetAll; k++) {
         document.querySelectorAll('fieldset')[k].style.backgroundColor = picker.value;
     }
+    
+    document.querySelector('main>form').style.backgroundColor = picker.value;
+    
 });
 
 
